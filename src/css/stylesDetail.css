@@ -1,0 +1,20 @@
+body{
+    padding-left: 0;
+    margin-left: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+    padding: 0px;
+    margin: 20px;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav ul{
+    list-style: none;
+    width: 250px;
+    height: 300px;
+    margin: 0;
+    padding-left: 30px;
+    overflow: auto;
+}
