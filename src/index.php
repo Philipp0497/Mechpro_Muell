@@ -26,7 +26,7 @@
   
   <div id ="hintergrundEingabe">
     <nav class="mitte">
-      <form action="uebersicht.html">
+      <form action="uebersicht.php">
         <ul>
           <li>
             <label for="username">Username:</label>
@@ -40,7 +40,6 @@
             <button type="submit" id="ButtonLogin">Login</button>
           </li>
         </ul>
-      </form>
     </nav>
   </div>
   <script>

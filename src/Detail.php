@@ -38,7 +38,7 @@
     </nav>
 
     <div>
-        <form action="uebersicht.html">
+        <form action="uebersicht.php">
             <button type="submit">Zurück zur Übersicht</button>
         </form>
     </div>

@@ -24,7 +24,7 @@
     <nav class="mitte">
       <ul>
         <li>
-            <a href="./Detail.html">Mülltonne1</a>
+            <a href="./Detail.php">Mülltonne1</a>
         </li>
         <ul>
             <li>
@@ -38,7 +38,7 @@
             </li>
         </ul>
         <li>
-            <a href="./Detail.html">Mülltonne2</a>
+            <a href="./Detail.php">Mülltonne2</a>
         </li>
         <ul>
             <li>
@@ -52,7 +52,7 @@
             </li>
         </ul>
         <li>
-            <a href="./Detail.html">Mülltonne3</a>
+            <a href="./Detail.php">Mülltonne3</a>
         </li>
         <ul>
             <li>
@@ -66,7 +66,7 @@
             </li>
         </ul>
         <li>
-            <a href="./Detail.html">Mülltonne4</a>
+            <a href="./Detail.php">Mülltonne4</a>
         </li>
         <ul>
             <li>
@@ -80,7 +80,7 @@
             </li>
         </ul>
         <li>
-            <a href="./Detail.html">Mülltonne5</a>
+            <a href="./Detail.php">Mülltonne5</a>
         </li>
         <ul>
             <li>
@@ -94,7 +94,7 @@
             </li>
         </ul>
         <li>
-            <a href="./Detail.html">Mülltonne6</a>
+            <a href="./Detail.php">Mülltonne6</a>
         </li>
         <ul>
             <li>
@@ -108,7 +108,7 @@
             </li>
         </ul>
         <li>
-            <a href="./Detail.html">Mülltonne7</a>
+            <a href="./Detail.php">Mülltonne7</a>
         </li>
         <ul>
             <li>
