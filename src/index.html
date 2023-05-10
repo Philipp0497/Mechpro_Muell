@@ -24,26 +24,32 @@
     alt="Mülleimer Bild">
   </div>
   
-  <div>
+  <div id ="hintergrundEingabe">
     <nav class="mitte">
-      <ul>
-        <li>
-          <label for="username">Username:</label>
-          <input id="username">
-        </li>
-        <li>
-          <label for="Passwort">Passwort:</label>
-          <input id="passwort" type="password">
-        </li>
-        <li>
-          <form action="uebersicht.html">
-          <button type="submit">Login</button>
-          </form>
-        </li>
-      </ul>
-
+      <form action="uebersicht.html">
+        <ul>
+          <li>
+            <label for="username">Username:</label>
+            <input id="username" type ="text" name="username">
+          </li>
+          <li>
+            <label for="passwort">Passwort:</label>
+            <input id="passwort" type="password" name="passwort">
+          </li>
+          <li>
+            <button type="submit" id="ButtonLogin">Login</button>
+          </li>
+        </ul>
+      </form>
     </nav>
   </div>
+  <script>
+    document.getElementById("ButtonLogin").onclick = function()
+    {
+      var name = document.getElementById("username").value;
+      console.log(name);
+    }
+  </script>
   <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
   <script src="js/app.js"></script>
 
