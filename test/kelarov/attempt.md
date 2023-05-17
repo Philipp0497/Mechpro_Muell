@@ -43,7 +43,7 @@ I can't figure out how to link the return value of the php|js script to the html
             <input id="password" type="password" name="password">
           </li>
           <li>
-            <button type="submit" id="login_btn">Login</button>
+            <button type="submit" id="login">Login</button>
           </li>
         </ul>
         </form>
@@ -57,7 +57,7 @@ I can't figure out how to link the return value of the php|js script to the html
 ## ./js/index.js
 ```javascript
 // 
-document.getElementById("login_btn").addEventListener("click",
+document.getElementById("login").addEventListener("click",
     function () {
         // Get the username and password from the form
         var username = document.getElementById("username").value;
