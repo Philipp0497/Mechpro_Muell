@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Mai 2023 um 16:56
+-- Erstellungszeit: 24. Mai 2023 um 14:55
 -- Server-Version: 10.4.28-MariaDB
 -- PHP-Version: 8.2.4
 
@@ -43,48 +43,6 @@ INSERT INTO `rubbish_bin` (`bin_id`, `user_id`, `bin_size`, `bin_adress`) VALUES
 (2, 1, 120, '72345 Göppingen, Teststrasse 2'),
 (3, 1, 120, '72345 Göppingen, Teststrasse 5');
 
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `sensor_data`
---
-
-CREATE TABLE `sensor_data` (
-  `bin_id` int(3) NOT NULL,
-  `timestamp` date NOT NULL,
-  `temperature` double NOT NULL,
-  `fill_level` int(3) NOT NULL,
-  `burns` tinyint(1) NOT NULL,
-  `lid_open` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Daten für Tabelle `sensor_data`
---
-
-INSERT INTO `sensor_data` (`bin_id`, `timestamp`, `temperature`, `fill_level`, `burns`, `lid_open`) VALUES
-(1, '2023-05-09', 20.6, 30, 0, 0),
-(1, '2023-05-10', 45.6, 50, 0, 0);
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `user_data`
---
-
-CREATE TABLE `user_data` (
-  `user_id` int(3) NOT NULL,
-  `user_password` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Daten für Tabelle `user_data`
---
-
-INSERT INTO `user_data` (`user_id`, `user_password`) VALUES
-(1, '1234567890'),
-(2, '2345678901');
-
 --
 -- Indizes der exportierten Tabellen
 --
@@ -94,18 +52,6 @@ INSERT INTO `user_data` (`user_id`, `user_password`) VALUES
 --
 ALTER TABLE `rubbish_bin`
   ADD PRIMARY KEY (`bin_id`);
-
---
--- Indizes für die Tabelle `sensor_data`
---
-ALTER TABLE `sensor_data`
-  ADD PRIMARY KEY (`bin_id`,`timestamp`);
-
---
--- Indizes für die Tabelle `user_data`
---
-ALTER TABLE `user_data`
-  ADD PRIMARY KEY (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
