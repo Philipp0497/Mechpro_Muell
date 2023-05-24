@@ -11,125 +11,64 @@
 </head>
 
 <body>
+  <?php
+  session_start();
+
+  // Überprüfen, ob der Benutzer eingeloggt ist
+  if (!isset($_SESSION['user_id'])) {
+    // Benutzer ist nicht eingeloggt, Weiterleitung zur Login-Seite
+    header("Location: login.php");
+    exit();
+  }
+
+  // Verbindung zur Datenbank herstellen 
+  $host = 'localhost';
+  $user = 'root';
+  $password = ''; 
+  $database = 'rbin20'; 
+
+  $conn = new mysqli($host, $user, $password, $database);
+  if ($conn->connect_error) {
+    die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+  }
+
+  // Benutzer-ID aus der Session erhalten
+  $user_id = $_SESSION['user_id'];
+
+  // Daten für den eingeloggten Benutzer abrufen
+  $sql = "SELECT * FROM rubbish_bin WHERE user_id = $user_id";
+  $result = $conn->query($sql);
+
+  // Überprüfen, ob eine bin_id angeklickt wurde
+  if (isset($_GET['bin_id'])) {
+    $clicked_bin_id = $_GET['bin_id'];
+
+    // bin_id in der Session speichern
+    $_SESSION['clicked_bin_id'] = $clicked_bin_id;
+
+    // Weiterleitung zur Detailansicht
+    header("Location: detailansicht.php");
+    exit();
+  }
+  ?>
   
-  <header class="mitte"><!-- Überschrift-->
-    Hallo "User"
-  </header>
+  <h1>Übersicht</h1>
 
-  <div id="Uebersicht">
-    Mülltonneübersicht:
-  </div>
-
-  <div >
-    <nav class="mitte">
-      <ul>
-        <li>
-            <a href="./Detail.php">Mülltonne1</a>
-        </li>
-        <ul>
-            <li>
-                Größe: 120l
-            </li>
-            <li>
-                Standort:73033 Göppingen
-            </li>
-            <li>
-                Janstraße 20
-            </li>
-        </ul>
-        <li>
-            <a href="./Detail.php">Mülltonne2</a>
-        </li>
-        <ul>
-            <li>
-                Größe: 240l
-            </li>
-            <li>
-                Standort:73033 Göppingen
-            </li>
-            <li>
-                Janstraße 21
-            </li>
-        </ul>
-        <li>
-            <a href="./Detail.php">Mülltonne3</a>
-        </li>
-        <ul>
-            <li>
-                Größe: 60l
-            </li>
-            <li>
-                Standort:73033 Göppingen
-            </li>
-            <li>
-                Janstraße 23
-            </li>
-        </ul>
-        <li>
-            <a href="./Detail.php">Mülltonne4</a>
-        </li>
-        <ul>
-            <li>
-                Größe: 120l
-            </li>
-            <li>
-                Standort:73033 Göppingen
-            </li>
-            <li>
-                Teststraße 20
-            </li>
-        </ul>
-        <li>
-            <a href="./Detail.php">Mülltonne5</a>
-        </li>
-        <ul>
-            <li>
-                Größe: 120l
-            </li>
-            <li>
-                Standort:73033 Göppingen
-            </li>
-            <li>
-                Teststraße 23
-            </li>
-        </ul>
-        <li>
-            <a href="./Detail.php">Mülltonne6</a>
-        </li>
-        <ul>
-            <li>
-                Größe: 120l
-            </li>
-            <li>
-                Standort:73033 Göppingen
-            </li>
-            <li>
-                Teststraße 30
-            </li>
-        </ul>
-        <li>
-            <a href="./Detail.php">Mülltonne7</a>
-        </li>
-        <ul>
-            <li>
-                Größe: 120l
-            </li>
-            <li>
-                Standort:73033 Göppingen
-            </li>
-            <li>
-                Teststraße 42
-            </li>
-        </ul>
-      </ul>
-
-    </nav>
-  </div>
-
-
-  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
-  <script src="js/app.js"></script>
-
+  <table>
+    <tr>
+      <th>Bin_ID</th>
+      <th>Größe</th>
+      <th>Adresse</th>
+    </tr>
+    <?php while ($row = $result->fetch_assoc()): ?>
+      <tr onclick="window.location.href='?bin_id=<?php echo $row['bin_id']; ?>'">
+        <td><?php echo $row['bin_id']; ?></td>
+        <td><?php echo $row['bin_size']; ?></td>
+        <td><?php echo $row['bin_adress']; ?></td>
+      </tr>
+    <?php endwhile; ?>
+  </table>
+  
 </body>
 
 </html>
