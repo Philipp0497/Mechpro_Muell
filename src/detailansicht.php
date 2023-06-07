@@ -25,8 +25,8 @@
   //Datenbankabfrage aus Sensordata
   // Verbindung zur Datenbank herstellen 
   $host = 'localhost';
-  $user = 'root';
-  $password = ''; 
+  $user = 'muell';
+  $password = 'muell123'; 
   $database = 'rbin20'; 
 
   $conn = new mysqli($host, $user, $password, $database);
@@ -34,15 +34,44 @@
     die("Verbindung fehlgeschlagen: " . $conn->connect_error);
   }
   //Sensordaten abrufen (nur aktuellste Werte)
-  $sql = "SELECT * FROM sensor_data WHERE bin_id = $clicked_bin_id ORDER BY timestamp Desc Limit 1";
+  $sql = "SELECT * FROM sensor_data WHERE bin_id = $clicked_bin_id ORDER BY timestamp Desc Limit 3";
   $result = $conn->query($sql);
   //$result->fetch_assoc();
-  while($row=mysqli_fetch_row($result))
-  {
-    printf("%s (%s) (%s) (%s) (%s) (%s)\n", $row[0], $row[1], $row[2], $row[3], $row[4], $row[5]);
-  }
+
+  
+ // while($row=mysqli_fetch_row($result))
+ // {
+ //   printf("BIN_ID (%s) (%s) (%s) (%s) (%s)\n", $row[0], $row[1], $row[2], $row[3], $row[4], $row[5]);
+ // }
   
   ?>
+
+<table>
+    <tr>
+      <th>Bin ID</th>
+      <th>Zeit</th>
+      <th>Temperatur</th>
+      <th>Füllstand</th>
+      <th>Feuer</th>
+      <th>Deckel</th>
+    </tr>
+    <?php while ($row=mysqli_fetch_row($result)): ?>
+      <tr>
+        <td><?php echo $row[0]; ?></td>
+        <td><?php echo $row[1]; ?></td>
+        <td><?php echo $row[2]; ?></td>
+        <td><?php echo $row[3]; ?></td>
+        <td><?php echo $row[4]; ?></td>
+        <td><?php echo $row[5]; ?></td>
+
+        
+
+      </tr>
+    <?php endwhile; ?>
+  </table>
+
+
+
 </body>
 
 </html>

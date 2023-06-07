@@ -3,11 +3,11 @@ session_start();
 
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
+$DATABASE_USER = 'muell';
+$DATABASE_PASS = 'muell123';
 $DATABASE_NAME = 'rbin20';
 
-// Try and connect using the info above.
+// Try to connect to the database.
 $con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ($con->connect_error) {
 	// If there is an error with the connection, stop the script and display the error.
@@ -41,8 +41,8 @@ $con->close();
 <html class="no-js" lang="de">
 
 <head>
-  <meta charset="utf-8">
-  <title>Intelligente Mülltonne 2.0 - Anmeldung</title>
+  <meta charset="utf-16">
+  <title>Intelligente M&uumllltonne 2.0 - Anmeldung</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/styles.css">
@@ -53,14 +53,14 @@ $con->close();
 <body>
   
   <header class="mitte"><!-- Überschrift-->
-    Intelligente Mülltonne
+    Intelligente M&uumllltonne
   </header>
 
   <div class="mitte"><!-- Bild-->
     <img 
     width ="300"
     src="img/Muelleimer_Image.webp" 
-    alt="Mülleimer Bild">
+    alt="Mlleimer Bild">
   </div>
   
   <div id="hintergrundEingabe">

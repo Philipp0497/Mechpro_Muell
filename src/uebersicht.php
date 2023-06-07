@@ -23,8 +23,8 @@
 
   // Verbindung zur Datenbank herstellen 
   $host = 'localhost';
-  $user = 'root';
-  $password = ''; 
+  $user = 'muell';
+  $password = 'muell123'; 
   $database = 'rbin20'; 
 
   $conn = new mysqli($host, $user, $password, $database);
@@ -64,7 +64,7 @@
       <tr onclick="window.location.href='?bin_id=<?php echo $row['bin_id']; ?>'">
         <td><?php echo $row['bin_id']; ?></td>
         <td><?php echo $row['bin_size']; ?></td>
-        <td><?php echo $row['bin_adress']; ?></td>
+        <td><?php echo $row['bin_address']; ?></td>
       </tr>
     <?php endwhile; ?>
   </table>
