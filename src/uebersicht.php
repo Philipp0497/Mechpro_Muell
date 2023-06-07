@@ -17,7 +17,7 @@
   // Überprüfen, ob der Benutzer eingeloggt ist
   if (!isset($_SESSION['user_id'])) {
     // Benutzer ist nicht eingeloggt, Weiterleitung zur Login-Seite
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
   }
 
