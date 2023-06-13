@@ -8,6 +8,11 @@
 
   <link rel="stylesheet" href="css/stylesUebersicht.css">
 
+
+  <style>
+
+tr:hover {background-color: rgb(110, 205, 236);;}
+</style>
 </head>
 
 <body>

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mülleimer</title>
+  <meta charset="utf-8">
+  <title>Intelligente Mülltonne 2.0 - Detail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/stylesDetail.css">
 </head>
 <body>
   <?php
@@ -57,6 +61,7 @@
     </tr>
     <?php while ($row=mysqli_fetch_row($result)): ?>
       <tr>
+        if($row[4]==0)
         <td><?php echo $row[0]; ?></td>
         <td><?php echo $row[1]; ?></td>
         <td><?php echo $row[2]; ?></td>

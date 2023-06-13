@@ -10,30 +10,4 @@ header{
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.mitte{
-    display: flex;
-    justify-content: center;    /*hozizontal*/
-    align-items: center;
-}
-#Uebersicht{
-    margin-bottom: 10px;
-    padding-left: 0;
-    margin-left: 30px;
-}
-nav ul{
-    list-style: none;
-    width: 250px;
-    height: 300px;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-    background-color:rgb(77, 138, 158);
-}
-nav ul ul{
-    list-style: none;
-    width: 250px;
-    height: 80px;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-}
+

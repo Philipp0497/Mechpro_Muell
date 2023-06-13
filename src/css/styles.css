@@ -9,7 +9,8 @@ header{
     margin: 20px;
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(110, 205, 236);
+    /*color: rgb(110, 205, 236);*/
+    color:  black;
 }
 .mitte{
     display: flex;
