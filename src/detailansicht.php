@@ -61,7 +61,6 @@
     </tr>
     <?php while ($row=mysqli_fetch_row($result)): ?>
       <tr>
-        if($row[4]==0)
         <td><?php echo $row[0]; ?></td>
         <td><?php echo $row[1]; ?></td>
         <td><?php echo $row[2]; ?></td>
